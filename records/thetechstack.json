@@ -1,0 +1,23 @@
+{
+  "$schema": "../schema/stack-record.schema.json",
+  "slug": "thetechstack",
+  "company": "TheTechStack",
+  "website": "https://www.thetechstack.com",
+  "sector": "media",
+  "size": "1-10",
+  "as_of": "2026-07-08",
+  "teardown_url": "/teardowns/thetechstack",
+  "verified_by_company": true,
+  "tools": [
+    { "category": "frontend", "tool": "Astro 5", "status": "current", "since": "2026-07", "notes": "Static output, zero client-side JS", "confidence": "confirmed", "evidence": [{ "url": "/teardowns/thetechstack", "type": "code", "accessed": "2026-07-08" }] },
+    { "category": "language", "tool": "TypeScript", "status": "current", "since": "2026-07", "confidence": "confirmed", "evidence": [{ "url": "/teardowns/thetechstack", "type": "code", "accessed": "2026-07-08" }] },
+    { "category": "database", "tool": "Flat JSON in git", "status": "current", "since": "2026-07", "notes": "Schema-validated stack records; SQLite planned past ~50 records", "confidence": "confirmed", "evidence": [{ "url": "/teardowns/thetechstack", "type": "code", "accessed": "2026-07-08" }] },
+    { "category": "llm-provider", "tool": "Anthropic Claude", "status": "current", "since": "2026-07", "notes": "Powers the four-agent research/writing pipeline", "confidence": "confirmed", "evidence": [{ "url": "/teardowns/thetechstack", "type": "code", "accessed": "2026-07-08" }] },
+    { "category": "orchestration", "tool": "Claude Code (headless)", "status": "current", "since": "2026-07", "notes": "run.sh drives scout, evidence, writer, fact-checker agents", "confidence": "confirmed", "evidence": [{ "url": "/teardowns/thetechstack", "type": "code", "accessed": "2026-07-08" }] },
+    { "category": "hosting", "tool": "Vercel", "status": "current", "since": "2026-07", "confidence": "confirmed", "evidence": [{ "url": "/teardowns/thetechstack", "type": "code", "accessed": "2026-07-08" }] },
+    { "category": "ci-cd", "tool": "GitHub (private repo)", "status": "current", "since": "2026-07", "notes": "Deploy on push via Vercel", "confidence": "confirmed", "evidence": [{ "url": "/teardowns/thetechstack", "type": "code", "accessed": "2026-07-08" }] },
+    { "category": "email", "tool": "Buttondown vs Resend", "status": "evaluating", "notes": "Newsletter — undecided", "confidence": "confirmed", "evidence": [{ "url": "/teardowns/thetechstack", "type": "code", "accessed": "2026-07-08" }] },
+    { "category": "analytics", "tool": "Plausible", "status": "evaluating", "notes": "Undecided; launching with none", "confidence": "confirmed", "evidence": [{ "url": "/teardowns/thetechstack", "type": "code", "accessed": "2026-07-08" }] }
+  ],
+  "sources": ["/teardowns/thetechstack"]
+}

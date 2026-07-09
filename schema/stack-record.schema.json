@@ -1,0 +1,60 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://www.thetechstack.com/schema/stack-record.schema.json",
+  "title": "StackRecord",
+  "description": "Structured record of one company's tech stack, produced by every teardown. This is the data moat.",
+  "type": "object",
+  "required": ["slug", "company", "as_of", "tools"],
+  "properties": {
+    "slug": { "type": "string", "pattern": "^[a-z0-9-]+$", "description": "URL-safe identifier, e.g. cursor-anysphere" },
+    "company": { "type": "string" },
+    "website": { "type": "string", "format": "uri" },
+    "sector": { "type": "string", "description": "e.g. ai-devtools, fintech, ecommerce" },
+    "size": {
+      "type": "string",
+      "enum": ["1-10", "11-50", "51-200", "201-1000", "1000+"],
+      "description": "Approximate headcount at as_of date"
+    },
+    "as_of": { "type": "string", "format": "date", "description": "Date the stack snapshot represents" },
+    "teardown_url": { "type": "string", "description": "Relative URL of the published teardown, if any" },
+    "verified_by_company": { "type": "boolean", "default": false },
+    "tools": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "required": ["category", "tool", "status", "confidence"],
+        "properties": {
+          "category": {
+            "type": "string",
+            "description": "Controlled vocabulary — see categories.md",
+            "examples": ["llm-provider", "inference-infra", "orchestration", "vector-db", "database", "frontend", "hosting", "observability", "ci-cd", "auth", "payments", "analytics", "email", "search", "queue", "data-pipeline", "internal-tools", "design", "crm"]
+          },
+          "tool": { "type": "string", "description": "Canonical tool name, e.g. PostgreSQL, LangChain" },
+          "status": { "type": "string", "enum": ["current", "previous", "evaluating"] },
+          "replaced": { "type": "string", "description": "Tool this one replaced, if known" },
+          "since": { "type": "string", "description": "Approx date adopted, YYYY or YYYY-MM" },
+          "notes": { "type": "string" },
+          "confidence": { "type": "string", "enum": ["confirmed", "inferred", "reported"] },
+          "evidence": {
+            "type": "array",
+            "items": {
+              "type": "object",
+              "required": ["url", "type"],
+              "properties": {
+                "url": { "type": "string" },
+                "type": { "type": "string", "enum": ["eng-blog", "job-post", "talk", "docs", "interview", "dns-fingerprint", "builtwith", "press", "social", "code", "other"] },
+                "quote": { "type": "string", "description": "Short supporting quote from the source" },
+                "accessed": { "type": "string", "format": "date" }
+              }
+            }
+          }
+        }
+      }
+    },
+    "sources": {
+      "type": "array",
+      "description": "All sources consulted for this record",
+      "items": { "type": "string" }
+    }
+  }
+}
