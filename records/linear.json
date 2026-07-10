@@ -1,0 +1,82 @@
+{
+  "$schema": "../schema/stack-record.schema.json",
+  "slug": "linear",
+  "company": "Linear",
+  "website": "https://linear.app",
+  "sector": "devtools",
+  "size": "51-200",
+  "as_of": "2026-07-10",
+  "verified_by_company": false,
+  "tools": [
+    { "category": "language", "tool": "TypeScript", "status": "current", "since": "2019", "notes": "Named as the base of Linear's stack from the founding era through the current careers-page description.", "confidence": "confirmed", "evidence": [
+      { "url": "https://newsletter.pragmaticengineer.com/p/linear", "type": "interview", "quote": "We chose a 'very normal' tech stack, based on TypeScript.", "accessed": "2026-07-10" },
+      { "url": "https://linear.app/careers/cd5ae036-0223-427a-b038-ba16ef9dcb32", "type": "job-post", "accessed": "2026-07-10" }
+    ] },
+    { "category": "frontend", "tool": "React", "status": "current", "since": "2019", "confidence": "confirmed", "evidence": [
+      { "url": "https://newsletter.pragmaticengineer.com/p/linear", "type": "interview", "quote": "We have React on the frontend and Node on the backend", "accessed": "2026-07-10" },
+      { "url": "https://linear.app/careers/cd5ae036-0223-427a-b038-ba16ef9dcb32", "type": "job-post", "quote": "React, MobX, styled-components on the frontend", "accessed": "2026-07-10" }
+    ] },
+    { "category": "frontend", "tool": "MobX", "status": "current", "since": "2019", "notes": "Reactive object-graph layer for the sync engine's in-memory client store (observable models, granular re-renders).", "confidence": "confirmed", "evidence": [
+      { "url": "https://marknotfound.com/posts/reverse-engineering-linears-sync-magic/", "type": "social", "quote": "A pretty basic stack. React, MobX, Typescript and Node with PostgreSQL. And some home-made sync magic.", "accessed": "2026-07-10" },
+      { "url": "https://linear.app/careers/cd5ae036-0223-427a-b038-ba16ef9dcb32", "type": "job-post", "quote": "React, MobX, styled-components on the frontend", "accessed": "2026-07-10" }
+    ] },
+    { "category": "frontend", "tool": "styled-components", "status": "current", "confidence": "confirmed", "evidence": [
+      { "url": "https://linear.app/careers/cd5ae036-0223-427a-b038-ba16ef9dcb32", "type": "job-post", "quote": "React, MobX, styled-components on the frontend", "accessed": "2026-07-10" }
+    ] },
+    { "category": "backend-framework", "tool": "Node.js", "status": "current", "since": "2019", "confidence": "confirmed", "evidence": [
+      { "url": "https://newsletter.pragmaticengineer.com/p/linear", "type": "interview", "quote": "We have React on the frontend and Node on the backend", "accessed": "2026-07-10" },
+      { "url": "https://linear.app/careers/cd5ae036-0223-427a-b038-ba16ef9dcb32", "type": "job-post", "quote": "Node, Postgres, Temporal, and Redis in the backend", "accessed": "2026-07-10" }
+    ] },
+    { "category": "database", "tool": "PostgreSQL", "status": "current", "since": "2019", "notes": "System of record; sync bootstrap responses include a _metadata_ payload showing \"method\":\"postgres\", corroborating Postgres behind the sync layer (inferred detail).", "confidence": "confirmed", "evidence": [
+      { "url": "https://newsletter.pragmaticengineer.com/p/linear", "type": "interview", "quote": "We use Postgres as a database", "accessed": "2026-07-10" },
+      { "url": "https://linear.app/careers/cd5ae036-0223-427a-b038-ba16ef9dcb32", "type": "job-post", "quote": "Node, Postgres, Temporal, and Redis in the backend", "accessed": "2026-07-10" }
+    ] },
+    { "category": "queue", "tool": "Redis", "status": "current", "since": "2019", "notes": "Used for queuing; named in Artman's founding-stack description.", "confidence": "confirmed", "evidence": [
+      { "url": "https://newsletter.pragmaticengineer.com/p/linear", "type": "interview", "quote": "Redis for queuing", "accessed": "2026-07-10" },
+      { "url": "https://linear.app/careers/cd5ae036-0223-427a-b038-ba16ef9dcb32", "type": "job-post", "quote": "Node, Postgres, Temporal, and Redis in the backend", "accessed": "2026-07-10" }
+    ] },
+    { "category": "database", "tool": "MongoDB", "status": "previous", "notes": "Confirmed in place for caching scenarios as of the 2022 Pragmatic Engineer interview, but absent from Linear's own 2026 careers-page \"Our tech\" list. Status of 'previous' is inferred from this list comparison, not an explicit migration statement from Linear — could be an oversight in the careers copy rather than a true retirement; no public writeup found explaining a removal or replacement.", "confidence": "inferred", "evidence": [
+      { "url": "https://newsletter.pragmaticengineer.com/p/linear", "type": "interview", "quote": "MongoDB is in place for caching scenarios", "accessed": "2026-07-10" },
+      { "url": "https://linear.app/careers/cd5ae036-0223-427a-b038-ba16ef9dcb32", "type": "job-post", "quote": "Node, Postgres, Temporal, and Redis in the backend", "accessed": "2026-07-10" }
+    ] },
+    { "category": "backend-framework", "tool": "GraphQL", "status": "current", "since": "2019", "notes": "API layer, with an accompanying SDK.", "confidence": "confirmed", "evidence": [
+      { "url": "https://newsletter.pragmaticengineer.com/p/linear", "type": "interview", "quote": "GraphQL as our API layer", "accessed": "2026-07-10" },
+      { "url": "https://linear.app/careers/cd5ae036-0223-427a-b038-ba16ef9dcb32", "type": "job-post", "quote": "Extensive, widely used, GraphQL API and SDK", "accessed": "2026-07-10" }
+    ] },
+    { "category": "queue", "tool": "Temporal", "status": "current", "notes": "Not present in the 2022 stack description; new by the 2026 careers page, where it appears both as a general backend component and as the engine behind an \"agentic workload system\" at production scale — likely durable-workflow orchestration for Linear's 2025 AI-agent features. Exact adoption date not stated.", "confidence": "confirmed", "evidence": [
+      { "url": "https://linear.app/careers/cd5ae036-0223-427a-b038-ba16ef9dcb32", "type": "job-post", "quote": "Agentic workload system utilizing temporal, operating at production scale", "accessed": "2026-07-10" },
+      { "url": "https://linear.app/careers/cd5ae036-0223-427a-b038-ba16ef9dcb32", "type": "job-post", "quote": "Node, Postgres, Temporal, and Redis in the backend", "accessed": "2026-07-10" }
+    ] },
+    { "category": "hosting", "tool": "Google Cloud Platform", "status": "current", "since": "2019", "notes": "Chosen over AWS for perceived cost-for-performance and a better UI.", "confidence": "confirmed", "evidence": [
+      { "url": "https://newsletter.pragmaticengineer.com/p/linear", "type": "interview", "quote": "we went with GCP because the user interface is much better than AWS", "accessed": "2026-07-10" },
+      { "url": "https://linear.app/careers/cd5ae036-0223-427a-b038-ba16ef9dcb32", "type": "job-post", "quote": "Hosted on Google Cloud with k8s", "accessed": "2026-07-10" }
+    ] },
+    { "category": "hosting", "tool": "Kubernetes", "status": "current", "since": "2019", "notes": "Adopted deliberately at a 2-engineer, 1-designer team size to avoid a later forced migration.", "confidence": "confirmed", "evidence": [
+      { "url": "https://newsletter.pragmaticengineer.com/p/linear", "type": "interview", "quote": "Putting Kubernetes in place when you only have two engineers and one designer on the project sounds like bad prioritization... It was more work to do upfront, but it means we won't have to migrate.", "accessed": "2026-07-10" },
+      { "url": "https://linear.app/careers/cd5ae036-0223-427a-b038-ba16ef9dcb32", "type": "job-post", "quote": "Hosted on Google Cloud with k8s", "accessed": "2026-07-10" }
+    ] },
+    { "category": "internal-tools", "tool": "GitHub", "status": "current", "confidence": "confirmed", "evidence": [
+      { "url": "https://linear.app/careers/cd5ae036-0223-427a-b038-ba16ef9dcb32", "type": "job-post", "quote": "GitHub, Slack, Notion", "accessed": "2026-07-10" }
+    ] },
+    { "category": "ci-cd", "tool": "GitHub Actions", "status": "current", "notes": "Not explicitly named by Linear; inferred from a public linear-release-action repo (GitHub Action, Shell) in Linear's GitHub org, suggesting its use for release automation.", "confidence": "inferred", "evidence": [
+      { "url": "https://github.com/linear", "type": "code", "quote": "a public linear-release-action repo (GitHub Action, Shell) in Linear's GitHub org suggests GitHub Actions for release automation", "accessed": "2026-07-10" }
+    ] },
+    { "category": "internal-tools", "tool": "Slack", "status": "current", "confidence": "confirmed", "evidence": [
+      { "url": "https://linear.app/careers/cd5ae036-0223-427a-b038-ba16ef9dcb32", "type": "job-post", "quote": "GitHub, Slack, Notion", "accessed": "2026-07-10" }
+    ] },
+    { "category": "internal-tools", "tool": "Notion", "status": "current", "confidence": "confirmed", "evidence": [
+      { "url": "https://linear.app/careers/cd5ae036-0223-427a-b038-ba16ef9dcb32", "type": "job-post", "quote": "GitHub, Slack, Notion", "accessed": "2026-07-10" }
+    ] }
+  ],
+  "sources": [
+    "https://newsletter.pragmaticengineer.com/p/linear",
+    "https://linear.app/careers/cd5ae036-0223-427a-b038-ba16ef9dcb32",
+    "https://getlatka.com/companies/linear.app",
+    "https://sacra.com/c/linear/",
+    "https://marknotfound.com/posts/reverse-engineering-linears-sync-magic/",
+    "https://linear.app/now/scaling-the-linear-sync-engine",
+    "https://github.com/wzhudev/reverse-linear-sync-engine",
+    "https://shivekkhurana.com/blog/sync-engines/",
+    "https://github.com/linear"
+  ]
+}
