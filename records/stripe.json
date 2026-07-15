@@ -1,0 +1,61 @@
+{
+  "$schema": "../schema/stack-record.schema.json",
+  "slug": "stripe",
+  "company": "Stripe",
+  "website": "https://stripe.com",
+  "sector": "fintech",
+  "size": "1000+",
+  "as_of": "2026-07-15",
+  "verified_by_company": false,
+  "tools": [
+    { "category": "language", "tool": "Ruby", "status": "current", "notes": "Core heritage language; product codebase described (circa 2017) as 'entirely implemented in a single Ruby monolith.' Stripe deliberately delayed decomposing this monolith until past 3,000 engineers, relying on Sorbet (see separate entry) to keep it productive rather than rewriting it.", "confidence": "confirmed", "evidence": [
+      { "url": "https://stripe.com/jobs/listing/software-engineer-new-grad-developer-end-user-experience-platform/7991718", "type": "job-post", "quote": "We work mostly in Java, Ruby, JavaScript, Scala, and Go.", "accessed": "2026-07-15" },
+      { "url": "https://lethain.com/stripe-sorbet/", "type": "other", "quote": "Our product codebase is entirely implemented in a single Ruby monolith.", "accessed": "2026-07-15" }
+    ] },
+    { "category": "language", "tool": "Sorbet", "status": "current", "since": "2017", "notes": "Custom static type checker for Ruby, built in-house by Stripe's Product Infrastructure team starting ~2017 and open-sourced ~2019 (timeline via search synthesis, not independently confirmed against a primary dated source). Built instead of migrating the Ruby monolith to Java or Go, which was explicitly considered and rejected. Used to type-check Stripe's ~15 million lines of Ruby code.", "confidence": "confirmed", "evidence": [
+      { "url": "https://stripe.dev/blog/sorbet-stripes-type-checker-for-ruby", "type": "eng-blog", "quote": "Stripe uses Sorbet to type check our 15 million lines of Ruby code, making engineers more productive.", "accessed": "2026-07-15" },
+      { "url": "https://lethain.com/stripe-sorbet/", "type": "other", "quote": "Our type checker, which we plan to name Sorbet, will allow us to continue developing within our existing Ruby codebase.", "accessed": "2026-07-15" }
+    ] },
+    { "category": "language", "tool": "TypeScript", "status": "current", "replaced": "Flow", "since": "2022-03", "notes": "Stripe's largest JavaScript codebase (the Dashboard) was converted from Flow to TypeScript in a single pull request on Sunday, March 6, 2022, after roughly a year of tooling preparation. Conversion used a codemod built on top of Airtable's open-sourced Flow-to-TypeScript codemod, later open-sourced by Stripe itself. Scale is reported inconsistently across Stripe's own sources: the blog post's headline figure is 3.7 million lines (the single flagship PR); the codemod's GitHub repo description says 6.5m+ lines; its README says 4m+ lines total across usage. Not reconciled in any single Stripe source.", "confidence": "confirmed", "evidence": [
+      { "url": "https://stripe.dev/blog/migrating-to-typescript", "type": "eng-blog", "quote": "we converted more than 3.7 million lines of code with a single pull request", "accessed": "2026-07-15" },
+      { "url": "https://github.com/stripe-archive/flow-to-typescript-codemod", "type": "code", "quote": "Codemod Stripe used to migrate 6.5m+ lines of code from Flow to TypeScript", "accessed": "2026-07-15" }
+    ] },
+    { "category": "language", "tool": "Flow", "status": "previous", "notes": "Stripe's prior type checker for its largest JavaScript codebase (the Dashboard), replaced by TypeScript in a single pull request on March 6, 2022. Engineers reportedly struggled with Flow's memory usage locking up laptops and unreliable in-editor integration (via search synthesis of the stripe.dev migration post, not independently re-verified by direct fetch).", "confidence": "confirmed", "evidence": [
+      { "url": "https://stripe.dev/blog/migrating-to-typescript", "type": "eng-blog", "quote": "we converted more than 3.7 million lines of code with a single pull request", "accessed": "2026-07-15" },
+      { "url": "https://github.com/stripe-archive/flow-to-typescript-codemod", "type": "code", "quote": "This is the codemod Stripe used to migrate 4m+ lines of Flow to TypeScript.", "accessed": "2026-07-15" }
+    ] },
+    { "category": "language", "tool": "JavaScript", "status": "current", "notes": "Base language of Stripe's largest frontend codebase (the Dashboard), underneath first Flow then TypeScript as the type-checking layer. Also listed among Stripe's primary languages on its own careers page.", "confidence": "confirmed", "evidence": [
+      { "url": "https://stripe.com/jobs/listing/software-engineer-new-grad-developer-end-user-experience-platform/7991718", "type": "job-post", "quote": "We work mostly in Java, Ruby, JavaScript, Scala, and Go.", "accessed": "2026-07-15" }
+    ] },
+    { "category": "language", "tool": "Java", "status": "current", "notes": "Listed as one of Stripe's primary languages on a live 2026 careers page. Not present in the 2017-era internal stack diagnosis (which named only Ruby monolith, a narrow Golang service, and Scala data infrastructure) -- Java's footprint appears to have grown since, but no origin story or adoption date was found in this pass.", "confidence": "confirmed", "evidence": [
+      { "url": "https://stripe.com/jobs/listing/software-engineer-new-grad-developer-end-user-experience-platform/7991718", "type": "job-post", "quote": "We work mostly in Java, Ruby, JavaScript, Scala, and Go.", "accessed": "2026-07-15" }
+    ] },
+    { "category": "language", "tool": "Go", "status": "current", "notes": "As of ~2017, used for one narrow payment-tokenization service, deliberately kept small to bound SOC1 compliance scope. Still listed as a primary Stripe language on the current careers page.", "confidence": "confirmed", "evidence": [
+      { "url": "https://stripe.com/jobs/listing/software-engineer-new-grad-developer-end-user-experience-platform/7991718", "type": "job-post", "quote": "We work mostly in Java, Ruby, JavaScript, Scala, and Go.", "accessed": "2026-07-15" },
+      { "url": "https://lethain.com/stripe-sorbet/", "type": "other", "quote": "There is one narrow exception, a Golang service handling payment tokenization, which we consider out of scope for two reasons.", "accessed": "2026-07-15" }
+    ] },
+    { "category": "language", "tool": "Scala", "status": "current", "notes": "As of ~2017, used for Stripe's data infrastructure, managed independently by a relatively small group of data engineers. Still listed as a primary Stripe language on the current careers page.", "confidence": "confirmed", "evidence": [
+      { "url": "https://stripe.com/jobs/listing/software-engineer-new-grad-developer-end-user-experience-platform/7991718", "type": "job-post", "quote": "We work mostly in Java, Ruby, JavaScript, Scala, and Go.", "accessed": "2026-07-15" },
+      { "url": "https://lethain.com/stripe-sorbet/", "type": "other", "quote": "Our data infrastructure is implemented in Scala.", "accessed": "2026-07-15" }
+    ] },
+    { "category": "hosting", "tool": "AWS", "status": "current", "since": "2011", "notes": "Reported by AWS's own customer case study, not by a Stripe-authored page -- likely accurate and probably Stripe-reviewed as a reference customer, but marked reported per strict confidence rules since Stripe did not author the source.", "confidence": "reported", "evidence": [
+      { "url": "https://aws.amazon.com/solutions/case-studies/stripe/", "type": "press", "quote": "Since 2011, Stripe has delivered its PCI-compliant payment platform entirely on AWS, relying on the security best practices as well as easy auditability of the AWS platform.", "accessed": "2026-07-15" }
+    ] },
+    { "category": "orchestration", "tool": "Minions (internal coding agents)", "status": "current", "since": "2025", "notes": "Stripe's homegrown, one-shot end-to-end coding agents, responsible for over 1,000 human-reviewed but fully agent-written pull requests merged per week as of early 2026. Reported (via search synthesis of press/social coverage, not a direct fetch of the full stripe.dev article body) to run in isolated 'devboxes,' built on a fork of Block's open-source Goose agent, connecting to 400+ internal MCP tools via an internal server called 'Toolshed.' A direct sequel to Stripe's pattern (seen with the TypeScript codemod) of building serious internal tooling on top of an external open-source base.", "confidence": "confirmed", "evidence": [
+      { "url": "https://stripe.dev/blog/minions-stripes-one-shot-end-to-end-coding-agents-part-2", "type": "eng-blog", "quote": "Minions are Stripe's homegrown coding agents, responsible for more than a thousand pull requests merged each week. Though humans review the code, minions write it from start to finish.", "accessed": "2026-07-15" },
+      { "url": "https://x.com/stripe/status/2021273907680997439", "type": "social", "quote": "Minions are our homegrown coding agents. Over a thousand pull requests merged each week at Stripe are completely minion-produced, and while they're human-reviewed, they contain no human-written code.", "accessed": "2026-07-15" }
+    ] }
+  ],
+  "sources": [
+    "https://stripe.dev/blog/migrating-to-typescript",
+    "https://stripe.dev/blog/sorbet-stripes-type-checker-for-ruby",
+    "https://github.com/stripe-archive/flow-to-typescript-codemod",
+    "https://lethain.com/stripe-sorbet/",
+    "https://stripe.com/jobs/listing/software-engineer-new-grad-developer-end-user-experience-platform/7991718",
+    "https://aws.amazon.com/solutions/case-studies/stripe/",
+    "https://stripe.dev/blog/minions-stripes-one-shot-end-to-end-coding-agents-part-2",
+    "https://stripe.dev/blog/minions-stripes-one-shot-end-to-end-coding-agents",
+    "https://x.com/stripe/status/2021273907680997439",
+    "https://medium.com/pinterest-engineering/migrating-3-7-million-lines-of-flow-code-to-typescript-8a836c88fea5"
+  ]
+}
