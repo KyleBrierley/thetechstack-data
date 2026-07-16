@@ -1,0 +1,446 @@
+{
+  "$schema": "../schema/stack-record.schema.json",
+  "slug": "sierra",
+  "company": "Sierra",
+  "website": "https://sierra.ai",
+  "sector": "customer-experience-ai",
+  "size": "201-1000",
+  "as_of": "2026-07-16",
+  "verified_by_company": false,
+  "tools": [
+    {
+      "category": "language",
+      "tool": "Go",
+      "status": "current",
+      "notes": "Named directly as Sierra's backend systems language across independent job postings (frontend, payments infrastructure) and confirmed in production use for Sierra's internal agent-runner infrastructure.",
+      "confidence": "confirmed",
+      "evidence": [
+        {
+          "url": "https://jobs.ashbyhq.com/Sierra/f391b10c-7a4a-42b4-9887-dd32b31d6e4e",
+          "type": "job-post",
+          "quote": "experience with GraphQL APIs and/or Golang (our backend language) is a plus for this role",
+          "accessed": "2026-07-16"
+        },
+        {
+          "url": "https://jobs.ashbyhq.com/Sierra/8fe2757e-13e9-47e0-9d5a-90b2596a975c",
+          "type": "job-post",
+          "quote": "Fluency in a systems language (we use Go) and comfort owning critical distributed systems end to end",
+          "accessed": "2026-07-16"
+        },
+        {
+          "url": "https://sierra.ai/blog/pinecone-harnessing-the-wisdom-of-the-workforce",
+          "type": "eng-blog",
+          "quote": "A Go process supervises Codex or Claude Code, manages the development services, and brokers privileged operations.",
+          "accessed": "2026-07-16"
+        }
+      ]
+    },
+    {
+      "category": "language",
+      "tool": "TypeScript",
+      "status": "current",
+      "notes": "Frontend language, paired with React.",
+      "confidence": "confirmed",
+      "evidence": [
+        {
+          "url": "https://jobs.ashbyhq.com/Sierra/f391b10c-7a4a-42b4-9887-dd32b31d6e4e",
+          "type": "job-post",
+          "quote": "Extensive experience (5+ years) building world-class web interfaces using React, TypeScript, HTML and CSS.",
+          "accessed": "2026-07-16"
+        },
+        {
+          "url": "https://jobs.ashbyhq.com/Sierra/032c8ab4-1911-4477-bc39-9cfcd701d5a9",
+          "type": "job-post",
+          "quote": "Experience with Go and Typescript.",
+          "accessed": "2026-07-16"
+        }
+      ]
+    },
+    {
+      "category": "language",
+      "tool": "Python",
+      "status": "current",
+      "notes": "Confirmed for Sierra Research's open-source evaluation tooling (tau-bench family, all Python repos). Not directly confirmed as a production agent-platform language \u2014 only listed as one acceptable option among Go/Scala/Python in a data-platform job posting.",
+      "confidence": "inferred",
+      "evidence": [
+        {
+          "url": "https://github.com/sierra-research",
+          "type": "code",
+          "quote": "tau2-bench \u2014 Python; tau-bench \u2014 Python; mu-bench \u2014 Python",
+          "accessed": "2026-07-16"
+        },
+        {
+          "url": "https://jobs.ashbyhq.com/Sierra/78c5dce4-3670-4c9b-a666-98f435c56324",
+          "type": "job-post",
+          "quote": "You possess strong backend and distributed systems fundamentals in a language like Go, Scala, or Python.",
+          "accessed": "2026-07-16"
+        }
+      ]
+    },
+    {
+      "category": "frontend",
+      "tool": "React",
+      "status": "current",
+      "confidence": "confirmed",
+      "evidence": [
+        {
+          "url": "https://jobs.ashbyhq.com/Sierra/f391b10c-7a4a-42b4-9887-dd32b31d6e4e",
+          "type": "job-post",
+          "quote": "building world-class web interfaces using React, TypeScript, HTML and CSS",
+          "accessed": "2026-07-16"
+        }
+      ]
+    },
+    {
+      "category": "backend-framework",
+      "tool": "GraphQL",
+      "status": "current",
+      "notes": "API layer between the React/TypeScript frontend and the Go backend, implemented with gqlgen.",
+      "confidence": "confirmed",
+      "evidence": [
+        {
+          "url": "https://jobs.ashbyhq.com/Sierra/f391b10c-7a4a-42b4-9887-dd32b31d6e4e",
+          "type": "job-post",
+          "quote": "You'll integrate frontend features with our GraphQL API and occasionally update server-side code (we use Go/gqlgen) to unblock frontend work.",
+          "accessed": "2026-07-16"
+        }
+      ]
+    },
+    {
+      "category": "hosting",
+      "tool": "AWS",
+      "status": "current",
+      "notes": "Explicitly named as Sierra's cloud provider by the SRE team's own posting (distinct from a separate, weaker 'AWS, GCP, or Azure' generic candidate-skills list found in another posting, which was not used as evidence).",
+      "confidence": "confirmed",
+      "evidence": [
+        {
+          "url": "https://jobs.ashbyhq.com/Sierra/3914e14a-2339-4d49-97e8-3a0de793cfb1",
+          "type": "job-post",
+          "quote": "Design and implement scalable, reliable, and secure cloud infrastructure (AWS) using Terraform and modern DevOps tooling.",
+          "accessed": "2026-07-16"
+        }
+      ]
+    },
+    {
+      "category": "hosting",
+      "tool": "Terraform",
+      "status": "current",
+      "confidence": "confirmed",
+      "evidence": [
+        {
+          "url": "https://jobs.ashbyhq.com/Sierra/802d17c5-fe47-4b44-90e5-65e5e731ff88",
+          "type": "job-post",
+          "quote": "Build and maintain cloud infrastructure using Terraform to ensure scalable, secure, and reproducible environments.",
+          "accessed": "2026-07-16"
+        },
+        {
+          "url": "https://jobs.ashbyhq.com/Sierra/3914e14a-2339-4d49-97e8-3a0de793cfb1",
+          "type": "job-post",
+          "quote": "Deep experience with Terraform, AWS services, container orchestration, and cloud networking",
+          "accessed": "2026-07-16"
+        }
+      ]
+    },
+    {
+      "category": "hosting",
+      "tool": "Kubernetes",
+      "status": "current",
+      "notes": "Confirmed running Sierra's internal 'Pinecone' agent-runner platform. Not separately confirmed for the customer-facing production agent runtime, though plausible given shared infrastructure culture. Sierra states the same infrastructure also underpins Ghostwriter, its customer-facing \"agent for building agents\" \u2014 so this extends beyond internal tooling.",
+      "confidence": "confirmed",
+      "evidence": [
+        {
+          "url": "https://sierra.ai/blog/pinecone-harnessing-the-wisdom-of-the-workforce",
+          "type": "eng-blog",
+          "quote": "Agency manages isolated, recoverable runner environments. It reconciles each runner into a Kubernetes pod, uses Redis Streams for live communication",
+          "accessed": "2026-07-16"
+        },
+        {
+          "url": "https://sierra.ai/blog/pinecone-harnessing-the-wisdom-of-the-workforce",
+          "type": "eng-blog",
+          "quote": "we could leverage the same infrastructure for Ghostwriter \u2014 our customer facing agent for building agents",
+          "accessed": "2026-07-16"
+        }
+      ]
+    },
+    {
+      "category": "observability",
+      "tool": "Datadog",
+      "status": "current",
+      "notes": "Named as one of several acceptable observability tools (alongside Prometheus, Grafana, OpenTelemetry) in two independent job postings, always as an 'e.g.' example rather than an explicit 'we use X' statement. Included at inferred confidence only because the same short list recurs independently across two job families.",
+      "confidence": "inferred",
+      "evidence": [
+        {
+          "url": "https://jobs.ashbyhq.com/Sierra/802d17c5-fe47-4b44-90e5-65e5e731ff88",
+          "type": "job-post",
+          "quote": "Experience with observability tools (Prometheus, Grafana, Datadog, OpenTelemetry, etc.).",
+          "accessed": "2026-07-16"
+        },
+        {
+          "url": "https://jobs.ashbyhq.com/Sierra/3914e14a-2339-4d49-97e8-3a0de793cfb1",
+          "type": "job-post",
+          "quote": "Strong background in observability systems (e.g., Prometheus, Grafana, Datadog, or similar).",
+          "accessed": "2026-07-16"
+        }
+      ]
+    },
+    {
+      "category": "queue",
+      "tool": "Redis",
+      "status": "current",
+      "notes": "Redis Streams used for live communication within Sierra's internal agent-runner platform (Pinecone). Not separately confirmed for the core customer-facing product.",
+      "confidence": "confirmed",
+      "evidence": [
+        {
+          "url": "https://sierra.ai/blog/pinecone-harnessing-the-wisdom-of-the-workforce",
+          "type": "eng-blog",
+          "quote": "uses Redis Streams for live communication, and stores durable events and checkpoints separately for recovery",
+          "accessed": "2026-07-16"
+        }
+      ]
+    },
+    {
+      "category": "data-pipeline",
+      "tool": "Apache Iceberg",
+      "status": "current",
+      "notes": "Sierra's own data lakehouse table format for its Agent Data Platform.",
+      "confidence": "confirmed",
+      "evidence": [
+        {
+          "url": "https://jobs.ashbyhq.com/Sierra/78c5dce4-3670-4c9b-a666-98f435c56324",
+          "type": "job-post",
+          "quote": "This includes our real-time eventing infrastructure, streaming and batch ETL pipelines, and our Iceberg-based data lakehouse.",
+          "accessed": "2026-07-16"
+        }
+      ]
+    },
+    {
+      "category": "orchestration",
+      "tool": "Custom multi-model orchestration (\"Constellation of Models\")",
+      "status": "current",
+      "notes": "Sierra deliberately avoids single-vendor lock-in: agents are assembled from 15+ frontier, open-weight, and proprietary models, routed per task (latency-sensitive tool calling, classification, long-context reasoning, tone) by a custom orchestration layer. Sierra's own communications do not name the specific model vendors behind this system for the production platform.",
+      "confidence": "confirmed",
+      "evidence": [
+        {
+          "url": "https://sierra.ai/blog/constellation-of-models",
+          "type": "eng-blog",
+          "quote": "agents built on Sierra are assembled using 15+ frontier, open-weight, and proprietary models, depending on the job to be done... we call this a constellation of models",
+          "accessed": "2026-07-16"
+        },
+        {
+          "url": "https://x.com/btaylor/status/1996594091162050974",
+          "type": "social",
+          "quote": "Sierra uses 15+ frontier and open source models for low latency tool calling and decision-making, precision classification, long-context reasoning, and empathy/tone. We call this a constellation of models",
+          "accessed": "2026-07-16"
+        }
+      ]
+    },
+    {
+      "category": "ai-eval",
+      "tool": "Custom LLM-as-judge evaluation (\"Monitors\")",
+      "status": "current",
+      "notes": "In-house always-on evaluation layer; each monitor goes through its own evaluation loop grounded in team-labeled conversations and multi-model agreement.",
+      "confidence": "confirmed",
+      "evidence": [
+        {
+          "url": "https://sierra.ai/blog/agent-monitoring",
+          "type": "eng-blog",
+          "quote": "Monitors, Sierra's always-on evaluation layer, use an LLM-as-judge to review every conversation so businesses can track agent quality and customer sentiment",
+          "accessed": "2026-07-16"
+        }
+      ]
+    },
+    {
+      "category": "ai-eval",
+      "tool": "\u03c4-bench / \u03c4\u00b2-bench / \u03c4\u00b3-bench / \u03bc-bench (in-house benchmark suite)",
+      "status": "current",
+      "notes": "Sierra Research's actively-maintained open-source benchmark suite for evaluating tool-using conversational agents across text, voice, and knowledge-retrieval domains.",
+      "confidence": "confirmed",
+      "evidence": [
+        {
+          "url": "https://github.com/sierra-research",
+          "type": "code",
+          "quote": "tau2-bench: \u03c4-Bench: A Benchmark for Tool-Agent-User Interaction in Real-World Domains (Python, MIT, 1.6k stars)",
+          "accessed": "2026-07-16"
+        },
+        {
+          "url": "https://sierra.ai/blog/agent-monitoring",
+          "type": "eng-blog",
+          "quote": "\ud835\udf0f\u00b3-Bench: Advancing agent benchmarking to knowledge and voice",
+          "accessed": "2026-07-16"
+        }
+      ]
+    },
+    {
+      "category": "inference-infra",
+      "tool": "LiteLLM",
+      "status": "current",
+      "notes": "Confirmed via Sierra Research's own open-source code as the model-provider abstraction layer for the tau-bench evaluation tooling. Not confirmed for the production agent-serving path.",
+      "confidence": "inferred",
+      "evidence": [
+        {
+          "url": "https://raw.githubusercontent.com/sierra-research/tau2-bench/main/README.md",
+          "type": "code",
+          "quote": "Edit .env with your API keys (uses LiteLLM \u2014 any supported provider works)",
+          "accessed": "2026-07-16"
+        }
+      ]
+    },
+    {
+      "category": "llm-provider",
+      "tool": "OpenAI",
+      "status": "current",
+      "notes": "OpenAI's Codex is confirmed in company-wide internal use as a coding agent, and Sierra's own tau2-bench voice benchmark integrates OpenAI's realtime API as a supported provider. Sierra has not publicly confirmed OpenAI as a model provider behind its customer-facing agent platform \u2014 the company deliberately describes a vendor-agnostic 'constellation of models' without naming production vendors.",
+      "confidence": "inferred",
+      "evidence": [
+        {
+          "url": "https://sierra.ai/blog/pinecone-harnessing-the-wisdom-of-the-workforce",
+          "type": "eng-blog",
+          "quote": "In January, every engineer at Sierra had Codex, Claude Code, and Cursor on their laptop, and it was working well.",
+          "accessed": "2026-07-16"
+        },
+        {
+          "url": "https://raw.githubusercontent.com/sierra-research/tau2-bench/main/README.md",
+          "type": "code",
+          "quote": "Voice Full-Duplex (Audio Native) \u2014 End-to-end voice evaluation with realtime providers (OpenAI, Gemini, xAI)",
+          "accessed": "2026-07-16"
+        }
+      ]
+    },
+    {
+      "category": "llm-provider",
+      "tool": "Anthropic",
+      "status": "current",
+      "notes": "Claude Code confirmed in company-wide internal engineering use. Not confirmed as a named production-platform model vendor \u2014 same caveat as the OpenAI entry. The Pinecone post also references Anthropic model names in default internal routing patterns.",
+      "confidence": "inferred",
+      "evidence": [
+        {
+          "url": "https://sierra.ai/blog/pinecone-harnessing-the-wisdom-of-the-workforce",
+          "type": "eng-blog",
+          "quote": "every engineer at Sierra had Codex, Claude Code, and Cursor on their laptop, and it was working well",
+          "accessed": "2026-07-16"
+        },
+        {
+          "url": "https://sierra.ai/blog/pinecone-harnessing-the-wisdom-of-the-workforce",
+          "type": "eng-blog",
+          "quote": "Other patterns like \u201cplan with Fable, execute with 5.6 Terra\u201d can be set as a default for certain use cases.",
+          "accessed": "2026-07-16"
+        }
+      ]
+    },
+    {
+      "category": "internal-tools",
+      "tool": "GitHub",
+      "status": "current",
+      "confidence": "confirmed",
+      "evidence": [
+        {
+          "url": "https://sierra.ai/blog/pinecone-harnessing-the-wisdom-of-the-workforce",
+          "type": "eng-blog",
+          "quote": "For engineers, that means the full Sierra development environment: GitHub, our toolchain, local services, browsers, and everything needed to verify its own work.",
+          "accessed": "2026-07-16"
+        }
+      ]
+    },
+    {
+      "category": "internal-tools",
+      "tool": "Slack",
+      "status": "current",
+      "confidence": "confirmed",
+      "evidence": [
+        {
+          "url": "https://sierra.ai/blog/pinecone-harnessing-the-wisdom-of-the-workforce",
+          "type": "eng-blog",
+          "quote": "pings you in Slack when a decision needs a human",
+          "accessed": "2026-07-16"
+        }
+      ]
+    },
+    {
+      "category": "internal-tools",
+      "tool": "Linear",
+      "status": "current",
+      "confidence": "confirmed",
+      "evidence": [
+        {
+          "url": "https://sierra.ai/blog/pinecone-harnessing-the-wisdom-of-the-workforce",
+          "type": "eng-blog",
+          "quote": "You can use it from your browser, Slack, Linear, even your phone",
+          "accessed": "2026-07-16"
+        }
+      ]
+    },
+    {
+      "category": "internal-tools",
+      "tool": "Cursor",
+      "status": "current",
+      "notes": "AI coding tool used company-wide by engineers.",
+      "confidence": "confirmed",
+      "evidence": [
+        {
+          "url": "https://sierra.ai/blog/pinecone-harnessing-the-wisdom-of-the-workforce",
+          "type": "eng-blog",
+          "quote": "every engineer at Sierra had Codex, Claude Code, and Cursor on their laptop, and it was working well",
+          "accessed": "2026-07-16"
+        }
+      ]
+    },
+    {
+      "category": "internal-tools",
+      "tool": "Codex (OpenAI)",
+      "status": "current",
+      "notes": "AI coding agent used company-wide by engineers.",
+      "confidence": "confirmed",
+      "evidence": [
+        {
+          "url": "https://sierra.ai/blog/pinecone-harnessing-the-wisdom-of-the-workforce",
+          "type": "eng-blog",
+          "quote": "every engineer at Sierra had Codex, Claude Code, and Cursor on their laptop, and it was working well",
+          "accessed": "2026-07-16"
+        }
+      ]
+    },
+    {
+      "category": "internal-tools",
+      "tool": "Claude Code (Anthropic)",
+      "status": "current",
+      "notes": "AI coding agent used company-wide by engineers.",
+      "confidence": "confirmed",
+      "evidence": [
+        {
+          "url": "https://sierra.ai/blog/pinecone-harnessing-the-wisdom-of-the-workforce",
+          "type": "eng-blog",
+          "quote": "every engineer at Sierra had Codex, Claude Code, and Cursor on their laptop, and it was working well",
+          "accessed": "2026-07-16"
+        }
+      ]
+    }
+  ],
+  "sources": [
+    "https://sierra.ai/blog/engineering",
+    "https://sierra.ai/blog/pinecone-harnessing-the-wisdom-of-the-workforce",
+    "https://sierra.ai/blog/constellation-of-models",
+    "https://sierra.ai/blog/agent-monitoring",
+    "https://sierra.ai/blog/context-engineering-the-key-to-great-agents",
+    "https://sierra.ai/blog/voice-ai-is-only-as-good-as-what-it-hears",
+    "https://sierra.ai/blog/100m-arr",
+    "https://sierra.ai/blog/year-two-in-review",
+    "https://sierra.ai/about",
+    "https://sierra.ai/careers",
+    "https://jobs.ashbyhq.com/Sierra/f391b10c-7a4a-42b4-9887-dd32b31d6e4e",
+    "https://jobs.ashbyhq.com/Sierra/802d17c5-fe47-4b44-90e5-65e5e731ff88",
+    "https://jobs.ashbyhq.com/Sierra/d77487f9-bab3-44c6-be18-744e7125c8b3",
+    "https://jobs.ashbyhq.com/Sierra/3914e14a-2339-4d49-97e8-3a0de793cfb1",
+    "https://jobs.ashbyhq.com/Sierra/032c8ab4-1911-4477-bc39-9cfcd701d5a9",
+    "https://jobs.ashbyhq.com/Sierra/8fe2757e-13e9-47e0-9d5a-90b2596a975c",
+    "https://jobs.ashbyhq.com/Sierra/fc6eaada-479c-4ff6-be79-7e267b9ed2b4",
+    "https://jobs.ashbyhq.com/Sierra/78c5dce4-3670-4c9b-a666-98f435c56324",
+    "https://github.com/sierra-research",
+    "https://raw.githubusercontent.com/sierra-research/tau2-bench/main/README.md",
+    "https://www.latent.space/p/bret",
+    "https://x.com/btaylor/status/1996594091162050974",
+    "https://techcrunch.com/2025/11/21/bret-taylors-sierra-reaches-100m-arr-in-under-two-years/",
+    "https://techcrunch.com/2025/09/04/bret-taylors-sierra-raises-350m-at-a-10b-valuation/",
+    "https://techcrunch.com/2026/05/04/sierra-raises-950m-as-the-race-to-own-enterprise-ai-gets-serious/",
+    "https://jobsbyculture.com/blog/working-at-sierra-2026"
+  ]
+}
