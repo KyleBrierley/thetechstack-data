@@ -1,5 +1,7 @@
 # TheTechStack — Public Stack Records
 
+[![Validate public stack data](https://github.com/KyleBrierley/thetechstack-data/actions/workflows/validate.yml/badge.svg)](https://github.com/KyleBrierley/thetechstack-data/actions/workflows/validate.yml)
+
 Structured, evidence-backed records of what companies actually run. This data powers
 [thetechstack.com/stacks](https://www.thetechstack.com/stacks).
 
@@ -13,8 +15,10 @@ flowchart LR
     A["Cited public evidence"] --> B["Structured stack record"]
     B --> C["Schema and evidence checks"]
     C --> D["Human review"]
-    D --> E["Public record"]
-    E --> F["TheTechStack site"]
+    D --> E["Approved public commit"]
+    E --> F["Exact-SHA import"]
+    F --> G["Private revalidation + build"]
+    G --> H["TheTechStack site"]
 ```
 
 The private research and editorial system remains private. This repository exposes the
@@ -30,9 +34,9 @@ instead. See [CONTRIBUTING.md](CONTRIBUTING.md) for the evidence and review rule
 
 Records verified by the company get a ✓ badge on the site.
 
-> Publication status: corrections are reviewed here, but the automated public-to-site
-> deployment path is still being completed. An accepted correction will not be treated
-> as live until a maintainer confirms the site update.
+> Publication status: after an approved change merges, the exact validated public commit
+> is imported into the private site repository, validated again, built, and deployed.
+> A maintainer still confirms the production result before treating a correction as live.
 
 ## Schema
 
@@ -42,7 +46,7 @@ categories to [`schema/categories.md`](schema/categories.md).
 Run the same validation used in pull requests:
 
 ```bash
-npm install
+npm ci
 npm run validate
 ```
 
@@ -58,6 +62,6 @@ npm run validate
 
 Data and schema: [CC BY 4.0](LICENSE) — use them with attribution to TheTechStack.
 
-The records and schema in this repository are the intended public source of truth. The
-current site synchronization direction is being migrated so approved public corrections
-cannot be overwritten by the private publishing system.
+The records and schema in this repository are the public source of truth. The site imports
+approved public commits by exact SHA, so private publishing work cannot overwrite accepted
+public corrections.
