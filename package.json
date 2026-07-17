@@ -1,0 +1,13 @@
+{
+  "name": "thetechstack-data",
+  "version": "1.0.0",
+  "private": true,
+  "description": "Validation tooling for TheTechStack public stack records.",
+  "scripts": {
+    "validate": "node scripts/validate-records.mjs"
+  },
+  "devDependencies": {
+    "ajv": "^8.17.1",
+    "ajv-formats": "^3.0.1"
+  }
+}

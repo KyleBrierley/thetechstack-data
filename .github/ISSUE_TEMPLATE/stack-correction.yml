@@ -1,0 +1,56 @@
+name: Stack correction
+description: Suggest an evidence-backed correction without editing JSON.
+title: "Correction: [Company] — [Tool or category]"
+labels: ["correction"]
+body:
+  - type: markdown
+    attributes:
+      value: |
+        Thanks for helping improve TheTechStack. Please do not include private work email addresses, employee IDs, credentials, or confidential company information.
+  - type: input
+    id: company
+    attributes:
+      label: Company
+      placeholder: Company name
+    validations:
+      required: true
+  - type: textarea
+    id: correction
+    attributes:
+      label: What should change?
+      description: Explain the current, previous, or evaluating tool and what is inaccurate or missing.
+    validations:
+      required: true
+  - type: input
+    id: evidence_url
+    attributes:
+      label: Public evidence URL
+      placeholder: https://...
+    validations:
+      required: true
+  - type: textarea
+    id: evidence
+    attributes:
+      label: Evidence context
+      description: Include a short supporting quote, source type, access date, and why the source supports the correction.
+    validations:
+      required: true
+  - type: dropdown
+    id: relationship
+    attributes:
+      label: Relationship to the company
+      options:
+        - No company relationship
+        - Current employee or authorized representative
+        - Former employee
+        - Customer, partner, or vendor
+        - Prefer to discuss privately
+    validations:
+      required: true
+  - type: checkboxes
+    id: confirmation
+    attributes:
+      label: Confirmation
+      options:
+        - label: I am sharing public, non-confidential evidence and have not included sensitive personal or company information.
+          required: true

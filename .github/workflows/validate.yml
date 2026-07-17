@@ -1,0 +1,58 @@
+name: Validate public stack data
+
+on:
+  pull_request:
+    paths:
+      - "records/**"
+      - "schema/**"
+      - "scripts/**"
+      - "package.json"
+      - "package-lock.json"
+      - ".github/workflows/validate.yml"
+  push:
+    branches: [main]
+    paths:
+      - "records/**"
+      - "schema/**"
+      - "scripts/**"
+      - "package.json"
+      - "package-lock.json"
+      - ".github/workflows/validate.yml"
+
+permissions:
+  contents: read
+
+concurrency:
+  group: validate-${{ github.workflow }}-${{ github.ref }}
+  cancel-in-progress: true
+
+jobs:
+  validate:
+    runs-on: ubuntu-latest
+    timeout-minutes: 10
+    steps:
+      - uses: actions/checkout@v7
+      - uses: actions/setup-node@v7
+        with:
+          node-version: 22
+          cache: npm
+      - run: npm ci
+      - run: npm run validate
+
+  dispatch-private-import:
+    needs: validate
+    if: ${{ github.event_name == 'push' && vars.PRIVATE_IMPORT_DISPATCH_ENABLED == 'true' }}
+    runs-on: ubuntu-latest
+    timeout-minutes: 5
+    steps:
+      - name: Dispatch exact validated public SHA
+        env:
+          GH_TOKEN: ${{ secrets.PRIVATE_WORKFLOW_TOKEN }}
+          PUBLIC_SHA: ${{ github.sha }}
+        run: |
+          gh api \
+            --method POST \
+            repos/KyleBrierley/thetechstack/actions/workflows/import-public-data.yml/dispatches \
+            -f ref=main \
+            -f "inputs[public_sha]=$PUBLIC_SHA" \
+            -f "inputs[force_rollback]=false"
