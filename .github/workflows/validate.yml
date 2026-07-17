@@ -1,14 +1,8 @@
 name: Validate public stack data
 
 on:
+  # Branch protection requires this check, so every pull request must emit it.
   pull_request:
-    paths:
-      - "records/**"
-      - "schema/**"
-      - "scripts/**"
-      - "package.json"
-      - "package-lock.json"
-      - ".github/workflows/validate.yml"
   push:
     branches: [main]
     paths:
