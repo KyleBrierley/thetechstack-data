@@ -1,0 +1,153 @@
+{
+  "$schema": "../schema/stack-record.schema.json",
+  "slug": "shopify",
+  "company": "Shopify",
+  "website": "https://www.shopify.com",
+  "sector": "ecommerce",
+  "as_of": "2026-10-29",
+  "scope": "Internal agent-assisted engineering: River, Aquifer and Remote Dev. Excludes merchant storefronts, checkout, Sidekick and Shopify’s complete infrastructure.",
+  "teardown_url": "/teardowns/shopify-river-engineering",
+  "verified_by_company": false,
+  "tools": [
+    {
+      "category": "orchestration",
+      "tool": "River",
+      "status": "current",
+      "confidence": "confirmed",
+      "notes": "Internal engineering agent accessed through Slack.",
+      "evidence": [
+        {
+          "url": "https://shopify.engineering/under-the-river",
+          "type": "eng-blog",
+          "accessed": "2026-10-29",
+          "quote": "River is an AI agent"
+        }
+      ]
+    },
+    {
+      "category": "internal-tools",
+      "tool": "Slack",
+      "status": "current",
+      "confidence": "confirmed",
+      "notes": "Shared conversation surface for River.",
+      "evidence": [
+        {
+          "url": "https://shopify.engineering/under-the-river",
+          "type": "eng-blog",
+          "accessed": "2026-10-29",
+          "quote": "company Slack"
+        }
+      ]
+    },
+    {
+      "category": "internal-tools",
+      "tool": "World",
+      "status": "current",
+      "confidence": "confirmed",
+      "notes": "Shopify’s monorepo.",
+      "evidence": [
+        {
+          "url": "https://shopify.engineering/under-the-river",
+          "type": "eng-blog",
+          "accessed": "2026-10-29",
+          "quote": "call it World"
+        }
+      ]
+    },
+    {
+      "category": "ci-cd",
+      "tool": "Nix",
+      "status": "current",
+      "confidence": "confirmed",
+      "notes": "Reproducible development, CI and production environments.",
+      "evidence": [
+        {
+          "url": "https://shopify.engineering/under-the-river",
+          "type": "eng-blog",
+          "accessed": "2026-10-29",
+          "quote": "Build everything with Nix"
+        }
+      ]
+    },
+    {
+      "category": "orchestration",
+      "tool": "Aquifer",
+      "status": "current",
+      "confidence": "confirmed",
+      "notes": "Internal agent platform; session, harness and sandbox are separate.",
+      "evidence": [
+        {
+          "url": "https://shopify.engineering/under-the-river",
+          "type": "eng-blog",
+          "accessed": "2026-10-29",
+          "quote": "internal platform for running AI agents"
+        }
+      ]
+    },
+    {
+      "category": "database",
+      "tool": "PostgreSQL",
+      "status": "current",
+      "confidence": "confirmed",
+      "notes": "Durable Aquifer session history.",
+      "evidence": [
+        {
+          "url": "https://shopify.engineering/under-the-river",
+          "type": "eng-blog",
+          "accessed": "2026-10-29",
+          "quote": "Postgres-backed"
+        }
+      ]
+    },
+    {
+      "category": "internal-tools",
+      "tool": "Remote Dev",
+      "status": "current",
+      "confidence": "confirmed",
+      "notes": "Remote Macs with iOS simulators and attached Android emulators on Linux VMs.",
+      "evidence": [
+        {
+          "url": "https://shopify.engineering/remote-dev",
+          "type": "eng-blog",
+          "accessed": "2026-10-29",
+          "quote": "fleet of remote Macs"
+        }
+      ]
+    },
+    {
+      "category": "internal-tools",
+      "tool": "SSH",
+      "status": "current",
+      "confidence": "confirmed",
+      "notes": "Agent access to remote mobile development machines.",
+      "evidence": [
+        {
+          "url": "https://shopify.engineering/remote-dev",
+          "type": "eng-blog",
+          "accessed": "2026-10-29",
+          "quote": "over SSH"
+        }
+      ]
+    },
+    {
+      "category": "observability",
+      "tool": "tmux",
+      "status": "current",
+      "confidence": "confirmed",
+      "notes": "Observable progress of long-running remote commands.",
+      "evidence": [
+        {
+          "url": "https://shopify.engineering/remote-dev",
+          "type": "eng-blog",
+          "accessed": "2026-10-29",
+          "quote": "tmux panes"
+        }
+      ]
+    }
+  ],
+  "sources": [
+    "https://shopify.engineering/under-the-river",
+    "https://shopify.engineering/river-vulnerability-remediation",
+    "https://shopify.engineering/remote-dev"
+  ]
+}
