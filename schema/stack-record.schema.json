@@ -18,6 +18,7 @@
       "description": "Approximate headcount at as_of date"
     },
     "as_of": { "type": "string", "format": "date", "description": "Date the stack snapshot represents" },
+    "scope": { "type": "string", "minLength": 1, "description": "Explicit boundary of this dated snapshot, not a complete company inventory" },
     "teardown_url": { "type": "string", "description": "Relative URL of the published teardown, if any" },
     "verified_by_company": { "type": "boolean", "default": false },
     "tools": {
